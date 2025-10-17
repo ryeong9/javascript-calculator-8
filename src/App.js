@@ -1,5 +1,6 @@
 import { Console } from "@woowacourse/mission-utils";
 import { parseInput } from "./utils/parser.js";
+import { validateAndConvert } from "./utils/validator.js";
 
 class App {
   async run() {
@@ -8,8 +9,15 @@ class App {
       Console.print("결과 : 0");
       return;
     }
-    const numbers = parseInput(input);
-    Console.print(`분리된 값 : ${numbers}`);
+
+    const separated = parseInput(input);
+
+    try {
+      const validated = validateAndConvert(separated);
+      Console.print(`분리된 값 : ${validated}`);
+    } catch (error) {
+      Console.print(`${error.message}`);
+    }
   }
 }
 
