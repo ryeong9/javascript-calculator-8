@@ -1,6 +1,7 @@
 import { Console } from "@woowacourse/mission-utils";
 import { parseInput } from "./utils/parser.js";
 import { validateAndConvert } from "./utils/validator.js";
+import { calculateSum } from "./utils/calculator.js";
 
 class App {
   async run() {
@@ -14,7 +15,7 @@ class App {
 
     try {
       const validated = validateAndConvert(separated);
-      Console.print(`분리된 값 : ${validated}`);
+      const sum = calculateSum(validated);
     } catch (error) {
       Console.print(`${error.message}`);
     }
