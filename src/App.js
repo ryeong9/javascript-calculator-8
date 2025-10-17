@@ -16,6 +16,7 @@ class App {
     try {
       const validated = validateAndConvert(separated);
       const sum = calculateSum(validated);
+      Console.print(`결과 : ${sum}`);
     } catch (error) {
       Console.print(`${error.message}`);
     }
