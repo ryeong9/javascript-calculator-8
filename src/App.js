@@ -5,15 +5,14 @@ import { calculateSum } from "./utils/calculator.js";
 
 class App {
   async run() {
-    let input = await Console.readLineAsync("덧셈할 문자열을 입력해 주세요.");
+    const input = await Console.readLineAsync("덧셈할 문자열을 입력해 주세요.");
     if (input === "") {
       Console.print("결과 : 0");
       return;
     }
 
-    const separated = parseInput(input);
-
     try {
+      const separated = parseInput(input);
       const validated = validateAndConvert(separated);
       const sum = calculateSum(validated);
       Console.print(`결과 : ${sum}`);
