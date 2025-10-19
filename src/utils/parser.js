@@ -10,7 +10,7 @@ export function parseInput(input) {
     const [, delimiter, numbers] = match;
 
     const parts = numbers.split(delimiter);
-    if (parts.length === 0 || parts.every((p) => p.trim() === "")) {
+    if (parts.length === 0 || parts.some((p) => p.trim() === "")) {
       throw new Error(ERROR_MESSAGES.INVALID_CUSTOM_DELIMITER);
     }
 
