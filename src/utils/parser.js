@@ -1,7 +1,7 @@
 import { ERROR_MESSAGES } from "../constants/errorMessages.js";
 
 export function parseInput(input) {
-  input = input.replace(/\\n/g, "\n"); // 터미널 테스트용
+  input = input.replace(/\\n/g, "\n");
 
   const customDelimiterPattern = /^\/\/(.)\n(.*)$/;
   const match = input.match(customDelimiterPattern);

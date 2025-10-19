@@ -18,6 +18,7 @@ class App {
       Console.print(`결과 : ${sum}`);
     } catch (error) {
       Console.print(`${error.message}`);
+      throw error;
     }
   }
 }
